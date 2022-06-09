@@ -7,7 +7,7 @@
     "watch": "webpack --watch --config webpack.config.js",
     "build": "webpack --config webpack.production.config.js",
     "dev": "webpack-dev-server --config webpack.config.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "npx cypress open"
   },
   "eslintConfig": {
     "extends": [
@@ -25,6 +25,7 @@
     "@fortawesome/free-solid-svg-icons": "^6.1.1",
     "@fortawesome/react-fontawesome": "^0.1.18",
     "antd": "^4.21.0",
+    "axios": "^0.27.2",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-query": "^3.39.1",
@@ -38,6 +39,8 @@
     "clean-webpack-plugin": "^4.0.0",
     "css-loader": "^6.7.1",
     "cypress": "^10.0.3",
+    "cypress-dotenv": "^2.0.0",
+    "dotenv": "^16.0.1",
     "dotenv-webpack": "^7.1.0",
     "eslint-plugin-cypress": "^2.12.1",
     "file-loader": "^6.2.0",

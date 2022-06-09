@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react'
 import { Layout } from 'antd'
-import CountryList from './CountryList'
 import MainRouter from '../routers/MainRouter'
 import { ThemeContext } from '../utils/themeContext'
 import '../styles/theme.dark.less'
