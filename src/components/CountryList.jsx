@@ -49,16 +49,11 @@ const Country = ({ data }) => {
                 <Card
                     hoverable
                     cover={<img alt="example" style={{ height: 150, width: 250 }} src={item.flags.png} />}
-                    // cover={<img alt="example" src="https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png" />}
+                    className="country-item"
                 >
                     <Meta 
                         title={<Title level={3}>{item.name.common}</Title>} 
                         description={
-                            // <Space direction="vertical">
-                            //     <><Text strong>Population: </Text> {item.population}</>
-                            //     <><Text strong>Region: </Text> <Text>{item.region}</Text></>
-                            //     <><Text strong>Capital: </Text> <Text>{item.capital && item.capital[0]}</Text></>
-                            // </Space>
                             <Space direction="vertical" size="small">
                                 <Space>
                                     <Text strong>Population: </Text>
@@ -75,7 +70,6 @@ const Country = ({ data }) => {
                             </Space>
                         } />
                 </Card>
-                {/* <Card style={{ minWidth: 350 }} title={item.title}>Card content</Card> */}
             </List.Item>
             )}
         />
