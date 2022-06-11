@@ -3,7 +3,7 @@ import { render } from 'react-dom'
 import { HashRouter } from 'react-router-dom'
 import { QueryClient, QueryClientProvider } from 'react-query'
 import { ReactQueryDevtools } from 'react-query/devtools'
-import './styles/main.css'
+import './styles/main.less'
 import App from './containers/App'
 
 

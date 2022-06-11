@@ -36,10 +36,11 @@ module.exports = {
                 ],
             },
             {
-                test: /\.less$/,
-                include: [/node_modules\/.*antd/],
+                test: /\.less$/i,
+                // include: [/node_modules\/.*antd/],
                 use: [
                     { loader: MiniCssExtractPlugin.loader },
+                    // { loader: "style-loader" },
                     { loader: 'css-loader' },
                     {
                         loader: 'less-loader',
@@ -47,6 +48,7 @@ module.exports = {
                             lessOptions : {
                                 modifyVars: {
                                     'primary-color': '#009E38',
+                                    'background-color-light': 'hsv(0, 0, 93%)',
                                     "border-radius-base": "2px",
                                 },
                                 javascriptEnabled: true,
@@ -87,27 +89,14 @@ module.exports = {
         }),
         new CleanWebpackPlugin(),
         new HtmlWebpackPlugin({
-            favicon: './public/dist/favicon.ico',
+            // favicon: './public/dist/favicon.ico',
             template: './template.html',
             cache: true
         }),
         new Dotenv({ path: './.env' }),
-        new AntdDayjsWebpackPlugin(),
-        new webpack.ProvidePlugin({
-            Buffer: ['buffer', 'Buffer'],
-            process: "process/browser",
-        })
     ],
     resolve: {
         extensions: ["*", ".js", ".jsx", '.ts', '.tsx', ".css", ".json"],
-        fallback: {
-            process: require.resolve("process/browser"),
-            zlib: require.resolve("browserify-zlib"),
-            stream: require.resolve("stream-browserify"),
-            util: require.resolve("util"),
-            buffer: require.resolve("buffer"),
-            asset: require.resolve("assert")
-        },
     },
     stats: {
         colors: true,
