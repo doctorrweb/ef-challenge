@@ -1,10 +1,10 @@
-import React, {  } from 'react'
-import { Layout, Row, Col, Typography, Space, Button } from 'antd'
+import React from 'react'
+import { Layout, Row, Col, Typography, Button } from 'antd'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faMoon } from '@fortawesome/free-regular-svg-icons'
 import { useTheme } from '../utils/themeContext'
 
-const { Header, Footer, Sider, Content } = Layout
+const { Header } = Layout
 const { Title } = Typography
 
 
@@ -16,10 +16,6 @@ const CustomHeader = () => {
     return (
         <Header 
             className='navbar'
-            // style={{
-            //     boxShadow: "0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)",
-            //     // marginBottom: 25
-            // }}
         >
             <Row type="flex" justify="space-between" align="middle">
                 <Col span={12}>
@@ -32,7 +28,7 @@ const CustomHeader = () => {
                         icon={<FontAwesomeIcon icon={faMoon} size="lg" />}
                         onClick={changeTheme}
                     >
-                        {` ${theme === 'light' ? 'Light' : 'Dark'} Mode`}
+                        {` ${theme === 'light' ? 'Dark' : 'Light'} Mode`}
                     </Button>
                 </Col>
             </Row>

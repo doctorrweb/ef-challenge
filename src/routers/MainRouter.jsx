@@ -11,8 +11,7 @@ const MainRouter = () => {
         <Routes>
             <Route element={<Countries />} path="/" />
             <Route element={<Country />} path="/:id" />
-            <Route element={<NotFound />} path="/test" />
-            {/* <Route element={<NotFound />} path="*" /> */}
+            <Route element={<NotFound />} path="*" />
         </Routes>
 
     )

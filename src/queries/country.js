@@ -2,7 +2,6 @@ import { useQuery } from 'react-query'
 import axios from 'axios'
 
 
-
 export const useGetCountryListQuery = () => 
   useQuery(
     'countries', 
@@ -14,5 +13,16 @@ export const useGetCountryListQuery = () =>
         staleTime: 10 * 60 * 1000,
         cacheTime: 10 * 60 * 1000
     }
+  )
+
+
+export const useGetCountryQuery = (name, enabled) => 
+  useQuery(
+    ['countries', name], 
+      () => axios
+        .get(`${process.env.REACT_APP_COUNTRY_BASE_URL}/name/${name}`)
+        .then(({data}) => data)
+        .catch(error => { throw new Error(error) }),
+    { enabled }
   )
 

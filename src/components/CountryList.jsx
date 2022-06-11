@@ -1,31 +1,14 @@
 import React from 'react'
+import { useNavigate } from 'react-router-dom'
 import { List, Card, Space, Typography } from 'antd'
 
 const { Meta } = Card
 const { Text, Title } = Typography
 
-// const data = [
-//   {
-//     title: 'Title 1',
-//   },
-//   {
-//     title: 'Title 2',
-//   },
-//   {
-//     title: 'Title 3',
-//   },
-//   {
-//     title: 'Title 4',
-//   },
-//   {
-//     title: 'Title 5',
-//   },
-//   {
-//     title: 'Title 6',
-//   },
-// ]
-
 const Country = ({ data }) => {
+
+    const navigate = useNavigate()
+
     return (
         <List
             grid={{
@@ -38,9 +21,6 @@ const Country = ({ data }) => {
                 xxl: 6,
             }}
             pagination={{
-                onChange: page => {
-                    console.log(page);
-                },
                 pageSize: 12,
             }}
             dataSource={data}
@@ -48,8 +28,10 @@ const Country = ({ data }) => {
             <List.Item>
                 <Card
                     hoverable
-                    cover={<img alt="example" style={{ height: 150, width: 250 }} src={item.flags.png} />}
+                    style={{ width: "100%" }}
+                    cover={<img alt="example" className='country-item-img' src={item.flags.png} />}
                     className="country-item"
+                    onClick={() => navigate(`/${item.name.common}`)}
                 >
                     <Meta 
                         title={<Title level={3}>{item.name.common}</Title>} 

@@ -1,13 +1,10 @@
-import React, { useState, useEffect, useCallback } from 'react'
-import { Layout, Row, Col, Input, Dropdown, Menu, Button, Space, Spin, Alert, notification } from 'antd'
-import CustomHeader from './CustomHeader'
+import React, { useState, useEffect } from 'react'
+import { Row, Col, Input, Dropdown, Menu, Button, Space, Spin, Alert, notification } from 'antd'
 import { useGetCountryListQuery } from '../queries/country'
 import CountryList from '../components/CountryList'
-import useNotification from '../utils/useNotification'
 import { DownOutlined } from '@ant-design/icons'
 
 
-const { Content } = Layout
 const { Search } = Input
 
 
@@ -17,6 +14,7 @@ const Countries = () => {
     const [activCountryList, setActivCountryList] = useState()
     const [countryList, setCountryList] = useState()
     const [region, setRegion] = useState()
+    
     const { isLoading: isLoadingCountries, data: dataCountries, error: errorCountries, isFetched: isFetchedCountries, refetch: refetchCountries } = useGetCountryListQuery()
 
 
@@ -89,9 +87,7 @@ const Countries = () => {
     
 
     return (
-        <Content className="app">
-            <CustomHeader />
-
+        <>
             <Row type="flex" justify="space-between" align="middle" className="alert">
                 <Col span={12} offset={6}>
                     {
@@ -152,7 +148,7 @@ const Countries = () => {
                     }
                 </Row>
             </Spin>
-        </Content>
+        </>
     )
 }
 

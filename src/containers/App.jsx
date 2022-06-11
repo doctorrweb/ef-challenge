@@ -2,10 +2,13 @@ import React, { useEffect, useState } from 'react'
 import { Layout } from 'antd'
 import MainRouter from '../routers/MainRouter'
 import { ThemeContext } from '../utils/themeContext'
+import CustomHeader from './CustomHeader'
 import '../styles/theme.dark.less'
 import '../styles/theme.light.less'
 import '../styles/app.less'
 
+
+const { Content } = Layout
 
 const App = () => {
 
@@ -28,8 +31,10 @@ const App = () => {
         setTheme
     }}>
         <Layout>
-            <MainRouter />
-            {/* <CountryList /> */}
+            <Content >
+              <CustomHeader />
+              <MainRouter />
+            </Content>
         </Layout>
     </ThemeContext.Provider>
   )
